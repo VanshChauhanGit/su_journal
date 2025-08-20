@@ -3,8 +3,6 @@ import Header from "@/components/Header";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 ">
-      {/* <Header /> */}
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8 max-w-7xl">
         <div className="space-y-8">
@@ -34,7 +32,7 @@ export default function Home() {
               </h3>
               <p className="text-gray-600 leading-relaxed mb-4">
                 This is sample content to demonstrate the sticky header
-                functionality. As you scroll down, you'll notice that when the
+                functionality. As you scroll down, you&apos;ll notice that when the
                 header reaches the top of the viewport, it becomes fixed and
                 stays visible while you continue scrolling.
               </p>
