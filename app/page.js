@@ -39,7 +39,7 @@ export default function Home() {
               <p className="text-gray-600 leading-relaxed">
                 The header maintains its full functionality including the search
                 bar and navigation menu, providing easy access to all sections
-                of the website regardless of how far down the page you've
+                of the website regardless of how far down the page you have
                 scrolled.
               </p>
             </section>
