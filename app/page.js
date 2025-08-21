@@ -1,49 +1,84 @@
-import Header from "@/components/Header";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 ">
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 max-w-7xl">
-        <div className="space-y-8">
-          {/* Hero Section */}
-          <section className="bg-white rounded-lg shadow-sm p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Welcome to Our Academic Journal
+    <div className="min-h-screen bg-gray-50">
+      <main className="container mx-auto px-4 py-2 max-w-7xl">
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <h2 className="text-teal-700 text-2xl font-bold mb-4">
+              NICE Journal of Business
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              International Journal of Computer Sciences and Engineering is an
-              open access, scholarly peer-reviewed, and academic research
-              journal for scientists, engineers, research scholars, and
-              academicians, which gains a foothold in Asia and opens to the
-              world, aims to publish original, theoretical and practical
-              advances in Computer Science Information Technology, Engineering
-              (Software, Computer, Electronic & Electrical), Management and
-              Information Sciences and all interdisciplinary streams of
-              Computing Sciences.
-            </p>
-          </section>
+            <div className="flex flex-col md:flex-row gap-8 text-justify">
+              <div>
+                <p className="mb-4">
+                  <span className="font-semibold">
+                    NICE Journal of Business
+                  </span>{" "}
+                  is a half-yearly journal, earlier published by NICE Management
+                  College, Meerut, and now brought out by the School of Business
+                  Studies, Shobhit University, Meerut. It provides a platform to
+                  research scholars, practising managers, and academicians in
+                  business management, commerce, economics, and allied fields,
+                  to present their research findings and share their views and
+                  experiences.
+                </p>
+                <p className="mb-4">
+                  The Journal aims at disseminating research output and
+                  providing information about recent developments in the
+                  relevant fields, by way of research articles, book reviews,
+                  Ph.D. thesis abstracts, case studies, and bibliographies, on
+                  topics related to business and allied areas. It is listed in{" "}
+                  <span className="italic">Cabell’s Management Directory</span>{" "}
+                  (USA), and is included in{" "}
+                  <span className="italic">EBSCO’s Database</span> and in{" "}
+                  <span className="italic">
+                    Ulrich’s Directory of Periodicals
+                  </span>
+                  .
+                </p>
+                <p className="mb-4">
+                  Original contributions received for publication in the Journal
+                  are subjected to a blind review, by experts in the relevant
+                  field.
+                </p>
+                <p className="mb-4">
+                  Shobhit University holds the copyright of the articles and
+                  other material published in the{" "}
+                  <span className="font-semibold">
+                    NICE Journal of Business
+                  </span>
+                  . No part of the journal may be reproduced or transmitted in
+                  any form, by any means, electronic or mechanical, including
+                  photocopying, recording, or by information storage or
+                  retrieval system, without the prior permission of the
+                  Editor/Publisher.
+                </p>
+              </div>
 
-          {/* Sample Content Sections */}
-          {Array.from({ length: 10 }, (_, i) => (
-            <section key={i} className="bg-white rounded-lg shadow-sm p-8">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                Section {i + 1}: Research Article
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                This is sample content to demonstrate the sticky header
-                functionality. As you scroll down, you&apos;ll notice that when the
-                header reaches the top of the viewport, it becomes fixed and
-                stays visible while you continue scrolling.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                The header maintains its full functionality including the search
-                bar and navigation menu, providing easy access to all sections
-                of the website regardless of how far down the page you have
-                scrolled.
-              </p>
-            </section>
-          ))}
+              <Image
+                src="/images/home-img.jpg" // Use your actual image filename here
+                alt="NICE Journal of Business Cover"
+                width={400}
+                height={310}
+                className="object-contain rounded"
+              />
+            </div>
+
+            <p className="mb-4 text-justify">
+              There is no submission or processing fee from the
+              authors/contributors.
+            </p>
+            <p className="mb-4 text-justify">
+              <span className="font-semibold">Policy on Complaints</span> about
+              its content: Any complaint regarding the violation of copyright,
+              plagiarism, misinformation, error, or inaccuracy, in any article,
+              or other contents will receive prompt attention of the Editor of
+              the Journal. It will be our endeavour to resolve such a complaint
+              expeditiously. Readers are welcome to send their comments on any
+              article or other piece published in the Journal.
+            </p>
+          </div>
         </div>
       </main>
     </div>
