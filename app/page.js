@@ -29,11 +29,13 @@ export default function Home() {
                   relevant fields, by way of research articles, book reviews,
                   Ph.D. thesis abstracts, case studies, and bibliographies, on
                   topics related to business and allied areas. It is listed in{" "}
-                  <span className="italic">Cabell’s Management Directory</span>{" "}
-                  (USA), and is included in{" "}
-                  <span className="italic">EBSCO’s Database</span> and in{" "}
                   <span className="italic">
-                    Ulrich’s Directory of Periodicals
+                    Cabell&rsquo;s Management Directory
+                  </span>{" "}
+                  (USA), and is included in{" "}
+                  <span className="italic">EBSCO&rsquo;s Database</span> and in{" "}
+                  <span className="italic">
+                    Ulrich&rsquo;s Directory of Periodicals
                   </span>
                   .
                 </p>
@@ -57,7 +59,7 @@ export default function Home() {
               </div>
 
               <Image
-                src="/images/home-img.jpg" // Use your actual image filename here
+                src="/images/home-img.jpg"
                 alt="NICE Journal of Business Cover"
                 width={400}
                 height={310}
