@@ -8,13 +8,14 @@ function page() {
       <h1 className="text-2xl font-bold text-teal-700">
         Acknowledgement to Referees
       </h1>
-
-      <ul className="space-y-3 list-disc list-inside p-3">
+      <hr className="border-t border-teal-700 my-2" />
+      <ul className="space-y-3 list-disc list-inside px-3">
         {referees.map((prof, index) => (
           <li key={index} className="flex items-center space-x-2 ">
             <span className="text-black font-semibold text-2xl">•</span>
             <p>
-              <span className="font-semibold">{prof.name}</span>, {prof.designation}
+              <span className="font-semibold">{prof.name}</span>,{" "}
+              {prof.designation}
             </p>
           </li>
         ))}

@@ -5,9 +5,10 @@ import React from "react";
 function page() {
   return (
     <Wrapper>
-      <h1 className="text-2xl font-bold text-teal-700 mb-2">
+      <h1 className="text-2xl font-bold text-teal-700">
         Why You Should Submit Your Research Work to Us?
       </h1>
+      <hr className="border-t border-teal-700 my-2" />
 
       <div className="col-md-12 content-wrapper text-justify space-y-4">
         <div className="bottom-space-10">

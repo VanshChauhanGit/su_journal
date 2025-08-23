@@ -7,7 +7,8 @@ function page() {
       <div className="flex flex-col md:flex-row items-center justify-between bg-white p-6 rounded-lg shadow-md border border-gray-200">
         {/* Left Content */}
         <div className="md:w-2/3 text-gray-700">
-          <h2 className="text-2xl font-bold text-teal-600 mb-3">Open Access</h2>
+          <h2 className="text-2xl font-bold text-teal-600">Open Access</h2>
+          <hr className="border-t border-teal-700 my-2" />
           <p className="text-base leading-relaxed">
             This is an open access journal which means that all content is
             freely available without charge to the user or his/her institution.

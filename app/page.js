@@ -6,9 +6,10 @@ export default function Home() {
       <main className="container mx-auto px-4 py-2 max-w-7xl">
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1">
-            <h2 className="text-teal-700 text-2xl font-bold mb-4">
+            <h2 className="text-teal-700 text-2xl font-bold">
               NICE Journal of Business
             </h2>
+            <hr className="border-t border-teal-700 my-2" />
             <div className="flex flex-col md:flex-row gap-8 text-justify">
               <div>
                 <p className="mb-4">

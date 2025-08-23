@@ -5,9 +5,10 @@ function page() {
   return (
     <Wrapper>
       <div className="text-justify">
-        <h1 className="text-2xl font-bold text-teal-700 mb-2">
+        <h1 className="text-2xl font-bold text-teal-700">
           Guidelines for Writing Book Review
         </h1>
+        <hr className="border-t border-teal-700 my-2" />
 
         <p className="mb-4">
           We invite academicians and others to write reviews of books on

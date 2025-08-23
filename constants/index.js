@@ -2,7 +2,7 @@ import { Home, Users, FileText, BookOpen, Gavel, Mail } from "lucide-react";
 
 export const navItems = [
   { label: "Home", icon: Home, href: "/" },
-  { label: "About Us", icon: Users, href: "/about-university" },
+  { label: "About University", icon: Users, href: "/about-university" },
   { label: "Editorial Board", icon: FileText, href: "/editorial-board" },
 
   { label: "Editor's Desk", href: "/editor-desk" },

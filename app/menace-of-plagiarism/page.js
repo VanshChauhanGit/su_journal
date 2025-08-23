@@ -4,9 +4,11 @@ import React from "react";
 function page() {
   return (
     <Wrapper>
-      <h1 className="text-2xl font-bold text-teal-700 mb-2">
+      <h1 className="text-2xl font-bold text-teal-700">
         Menace of Plagiarism
       </h1>
+      
+      <hr className="border-t border-teal-700 my-2" />
 
       <p className="mb-4">
         Plagiarism has become a major problem in the path of research and

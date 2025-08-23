@@ -4,11 +4,11 @@ import Wrapper from "@/components/Wrapper";
 function page() {
   return (
     <Wrapper>
+      <h2 className="text-teal-700 text-2xl font-bold">
+        From the Editor's Desk
+      </h2>
+      <hr className="border-t border-teal-700 my-2" />
       <div className="col-md-12 content-wrapper space-y-3 text-justify">
-        <h2 className="text-teal-700 text-2xl font-bold">
-          From the Editor's Desk
-        </h2>
-
         <p>
           Welcome to the new issue of NICE Journal of Business (Vol. 17, Nos. 1
           &amp; 2 : January - December, 2022). Each issue of the journal brings
