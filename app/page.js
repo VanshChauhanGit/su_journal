@@ -1,21 +1,24 @@
-import Image from "next/image";
+import JournalCard from "@/components/JournalCard";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="container mx-auto px-4 py-2 max-w-7xl">
-        <div className="flex flex-col md:flex-row gap-8">
+        <JournalCard />
+        <div className="flex flex-col md:flex-row gap-8 mt-4">
           <div className="flex-1">
             <h2 className="text-teal-700 text-2xl font-bold">
               NICE Journal of Business
             </h2>
+
             <hr className="border-t border-teal-700 my-2" />
+
             <div className="flex flex-col md:flex-row gap-8 text-justify">
               <div>
                 <p className="mb-4">
                   <span className="font-semibold">
                     NICE Journal of Business
-                  </span>{" "}
+                  </span>
                   is a half-yearly journal, earlier published by NICE Management
                   College, Meerut, and now brought out by the School of Business
                   Studies, Shobhit University, Meerut. It provides a platform to
@@ -33,7 +36,7 @@ export default function Home() {
                   <span className="italic">
                     Cabell&rsquo;s Management Directory
                   </span>{" "}
-                  (USA), and is included in{" "}
+                  (USA), and is included in
                   <span className="italic">EBSCO&rsquo;s Database</span> and in{" "}
                   <span className="italic">
                     Ulrich&rsquo;s Directory of Periodicals
@@ -59,13 +62,13 @@ export default function Home() {
                 </p>
               </div>
 
-              <Image
+              {/* <Image
                 src="/images/home-img.jpg"
                 alt="NICE Journal of Business Cover"
                 width={400}
                 height={310}
                 className="object-contain rounded"
-              />
+              /> */}
             </div>
 
             <p className="mb-4 text-justify">
