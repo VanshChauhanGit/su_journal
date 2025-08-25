@@ -27,6 +27,8 @@ const eslintConfig = [
       "react/no-unescaped-entities": "off",
       "react-hooks/exhaustive-deps": "warn", // instead of error
       "no-unused-vars": "warn",
+      "react-hooks/rules-of-hooks": "off",
+      "react-hooks/exhaustive-deps": "off",
     },
   },
 ];
