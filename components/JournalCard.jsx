@@ -1,9 +1,10 @@
-"use client";
+import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
-export default function JournalCard() {
+export default async function JournalCard() {
+  const session = await getServerSession();
+
   return (
     <div className="flex flex-col md:flex-row bg-gray-50 shadow-lg rounded-lg overflow-hidden max-w-4xl mx-auto">
       {/* Left Side Image */}
@@ -62,7 +63,7 @@ export default function JournalCard() {
             Call for Paper
           </Link>
           <Link
-            href={"/login"}
+            href={session ? "/user/paper-submission" : "/login"}
             className="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded"
           >
             Online Submission

@@ -1,14 +1,12 @@
-"use client";
-
-import { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { SearchInput } from "./SearchInput";
-import { navItems } from "@/constants";
-import { usePathname } from "next/navigation";
 import Navbar from "./Navbar";
+import InfoBox from "@/components/InfoBox";
+import { getServerSession } from "next-auth";
 
-export default function Header() {
+export default async function Header() {
+  const session = await getServerSession();
+  console.log(session);
+
   return (
     <header className="w-full bg-white">
       {/* Top Header Section */}
@@ -45,13 +43,16 @@ export default function Header() {
             </div>
 
             {/* Search Section */}
-            <SearchInput />
+            {/* <SearchInput /> */}
+
+            {/* InfoBox */}
+            <InfoBox />
           </div>
         </div>
       </div>
 
       {/* Navigation Menu */}
-      <Navbar />
+      <Navbar info={session?.user} />
 
       {/* {isNavSticky && <div className="h-12"></div>} */}
     </header>
