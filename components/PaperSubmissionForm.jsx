@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 export default function PaperSubmissionForm() {
-    const [file, setFile] = useState(null);
+  const [file, setFile] = useState(null);
 
-    const handleFileChange = (e) => {
-      setFile(e.target.files[0]);
-    };
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
   const [formData, setFormData] = useState({
     paperTitle: "",
     category: "",
