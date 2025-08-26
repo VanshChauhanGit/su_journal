@@ -29,6 +29,7 @@ const eslintConfig = [
       "no-unused-vars": "warn",
       "react-hooks/rules-of-hooks": "off",
       "react-hooks/exhaustive-deps": "off",
+      "react/no-children-prop": "off",
     },
   },
 ];
