@@ -1,11 +1,11 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import InfoBox from "@/components/InfoBox";
-import { getServerSession } from "next-auth";
+import { useSession, signOut } from "next-auth/react";
 
-export default async function Header() {
-  const session = await getServerSession();
-  console.log(session);
+export default function Header() {
+  const { data: session } = useSession();
 
   return (
     <header className="w-full bg-white">

@@ -1,9 +1,11 @@
-import { getServerSession } from "next-auth";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
-export default async function JournalCard() {
-  const session = await getServerSession();
+export default function JournalCard() {
+  // const session = await getServerSession();
+  const { data: session } = useSession();
 
   return (
     <div className="flex flex-col md:flex-row bg-gray-50 shadow-lg rounded-lg overflow-hidden max-w-4xl mx-auto">

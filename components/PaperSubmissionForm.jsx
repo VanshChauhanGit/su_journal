@@ -1,30 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { Asterisk } from "lucide-react";
+import { set } from "mongoose";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function PaperSubmissionForm() {
   const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const { data: session } = useSession();
+
+  console.log(session);
 
   const handleFileChange = (e) => {
     setFile(e.target.files[0]);
   };
+
   const [formData, setFormData] = useState({
     paperTitle: "",
     category: "",
     authorName: "",
     email: "",
     mobile: "",
-    designation: "",
+    organization: "",
     country: "",
     city: "",
     additionalAuthors: "",
-    contactAuthor: "",
     keywords: "",
     abstract: "",
-    paperType: "",
-    website: "",
-    address: "",
-    remarks: "",
   });
 
   const handleChange = (e) => {
@@ -32,20 +36,58 @@ export default function PaperSubmissionForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    setLoading(true);
+
+    const data = new FormData();
+    Object.keys(formData).forEach((key) => {
+      data.append(key, formData[key]);
+    });
+    if (file) {
+      data.append("file", file);
+    }
+
+    const res = await fetch("/api/papers", {
+      method: "POST",
+      body: data,
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      alert("Paper submitted successfully!");
+      setLoading(false);
+      redirect("/user/dashboard");
+    } else {
+      alert("Error: " + result.error);
+      setLoading(false);
+    }
   };
 
+  useEffect(() => {
+    if (session?.user?.email) {
+      setFormData((prev) => ({
+        ...prev,
+        email: session.user.email,
+      }));
+    }
+  }, [session]);
+
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg border">
-      <h2 className="text-xl font-bold mb-4 border-b pb-2">
+    <div className="mx-auto p-6 bg-white shadow-md rounded-lg border">
+      <h2 className="text-xl font-bold text-teal-700">
         Online Paper Submission
       </h2>
+      <hr className="border-t border-teal-700 my-2" />
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Paper Title */}
+        <h3 className="text-md font-semibold text-gray-600">
+          General Information
+        </h3>
         <div>
-          <label className="block text-sm font-medium mb-1">Paper Title</label>
+          <label className="flex text-sm font-medium mb-1">
+            Paper Title <Asterisk size={14} color="red" />
+          </label>
           <input
             type="text"
             name="paperTitle"
@@ -59,27 +101,40 @@ export default function PaperSubmissionForm() {
 
         {/* Category */}
         <div>
-          <label className="block text-sm font-medium mb-1">Category</label>
+          <label className="text-sm font-medium mb-1 flex">
+            Category <Asterisk size={14} color="red" />
+          </label>
           <select
             name="category"
             value={formData.category}
             onChange={handleChange}
+            required
             className="w-full border rounded-md px-3 py-2"
           >
             <option value="">Select category</option>
-            <option value="research">Research</option>
-            <option value="review">Review</option>
+            <option value="research">Research Paper</option>
+            <option value="review">Review Paper</option>
+            <option value="review">Case Study</option>
+            <option value="review">Survey Paper</option>
+            <option value="review">Technical Paper</option>
+            <option value="review">Short Communication</option>
           </select>
         </div>
 
+        <h3 className="text-md font-semibold text-gray-600">
+          Author's Information
+        </h3>
         {/* Author Name */}
         <div>
-          <label className="block text-sm font-medium mb-1">Author Name</label>
+          <label className="flex text-sm font-medium mb-1">
+            Author Name <Asterisk size={14} color="red" />
+          </label>
           <input
             type="text"
             name="authorName"
             value={formData.authorName}
             onChange={handleChange}
+            required
             className="w-full border rounded-md px-3 py-2"
             placeholder="Enter author name"
           />
@@ -87,23 +142,32 @@ export default function PaperSubmissionForm() {
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium mb-1">Email</label>
+          <label className="flex text-sm font-medium mb-1">
+            Email ID <Asterisk size={14} color="red" />
+          </label>
           <input
             type="email"
             name="email"
+            required
             value={formData.email}
-            onChange={handleChange}
+            readOnly
             className="w-full border rounded-md px-3 py-2"
             placeholder="Enter email"
           />
+          <p className="text-sm text-gray-500">
+            Email ID can be same as your login ID
+          </p>
         </div>
 
         {/* Mobile */}
         <div>
-          <label className="block text-sm font-medium mb-1">Mobile No</label>
+          <label className="flex text-sm font-medium mb-1">
+            Mobile No <Asterisk size={14} color="red" />
+          </label>
           <input
             type="text"
             name="mobile"
+            required
             value={formData.mobile}
             onChange={handleChange}
             className="w-full border rounded-md px-3 py-2"
@@ -111,13 +175,16 @@ export default function PaperSubmissionForm() {
           />
         </div>
 
-        {/* Designation */}
+        {/* Organization */}
         <div>
-          <label className="block text-sm font-medium mb-1">Designation</label>
+          <label className="flex text-sm font-medium mb-1">
+            Organization <Asterisk size={14} color="red" />
+          </label>
           <input
             type="text"
-            name="designation"
-            value={formData.designation}
+            name="organization"
+            required
+            value={formData.organization}
             onChange={handleChange}
             className="w-full border rounded-md px-3 py-2"
             placeholder="Enter designation"
@@ -127,11 +194,14 @@ export default function PaperSubmissionForm() {
         {/* Country + City */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium mb-1">Country</label>
+            <label className="flex text-sm font-medium mb-1">
+              Country <Asterisk size={14} color="red" />
+            </label>
             <input
               type="text"
               name="country"
               value={formData.country}
+              required
               onChange={handleChange}
               className="w-full border rounded-md px-3 py-2"
               placeholder="Enter country"
@@ -165,14 +235,19 @@ export default function PaperSubmissionForm() {
           ></textarea>
         </div>
 
+        <h3 className="text-md font-semibold text-gray-600">Content</h3>
+
         {/* Keywords */}
         <div>
-          <label className="block text-sm font-medium mb-1">Keywords</label>
+          <label className="flex text-sm font-medium mb-1">
+            Keywords <Asterisk size={14} color="red" />
+          </label>
           <input
             type="text"
             name="keywords"
             value={formData.keywords}
             onChange={handleChange}
+            required
             className="w-full border rounded-md px-3 py-2"
             placeholder="Enter keywords"
           />
@@ -180,11 +255,14 @@ export default function PaperSubmissionForm() {
 
         {/* Abstract */}
         <div>
-          <label className="block text-sm font-medium mb-1">Abstract</label>
+          <label className="flex text-sm font-medium mb-1">
+            Abstract <Asterisk size={14} color="red" />
+          </label>
           <textarea
             name="abstract"
             value={formData.abstract}
             onChange={handleChange}
+            required
             className="w-full border rounded-md px-3 py-2"
             placeholder="Enter abstract"
             rows="3"
@@ -192,88 +270,33 @@ export default function PaperSubmissionForm() {
         </div>
 
         <div>
-          <label className="block font-semibold text-gray-800 mb-2">
-            Attach Paper <span className="text-red-500">*</span>
+          <label className="flex text-sm font-semibold text-gray-800 mb-2">
+            Attach Paper <Asterisk size={14} color="red" />
           </label>
           <input
             type="file"
-            accept=".doc,.docx"
+            accept=".pdf, application/pdf"
             onChange={handleFileChange}
-            className="block w-full text-sm text-gray-700 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            required
+            className="block w-full text-sm p-2 text-gray-700 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
-          <p className="text-xs text-red-500 mt-1">
-            Word document Format Only.
-          </p>
-        </div>
-
-        {/* Paper Type */}
-        <div>
-          <label className="block text-sm font-medium mb-1">Paper Type</label>
-          <select
-            name="paperType"
-            value={formData.paperType}
-            onChange={handleChange}
-            className="w-full border rounded-md px-3 py-2"
-          >
-            <option value="">Select type</option>
-            <option value="original">Original Research</option>
-            <option value="short">Short Paper</option>
-          </select>
-        </div>
-
-        {/* Website */}
-        <div>
-          <label className="block text-sm font-medium mb-1">Website</label>
-          <input
-            type="url"
-            name="website"
-            value={formData.website}
-            onChange={handleChange}
-            className="w-full border rounded-md px-3 py-2"
-            placeholder="Enter website"
-          />
-        </div>
-
-        {/* Address */}
-        <div>
-          <label className="block text-sm font-medium mb-1">Address</label>
-          <textarea
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            className="w-full border rounded-md px-3 py-2"
-            placeholder="Enter address"
-            rows="2"
-          ></textarea>
-        </div>
-
-        {/* Remarks */}
-        <div>
-          <label className="block text-sm font-medium mb-1">Remarks</label>
-          <textarea
-            name="remarks"
-            value={formData.remarks}
-            onChange={handleChange}
-            className="w-full border rounded-md px-3 py-2"
-            placeholder="Enter remarks (if any)"
-            rows="2"
-          ></textarea>
+          <p className="text-xs text-red-500 mt-1">PDF Format Only.</p>
         </div>
 
         {/* Buttons */}
         <div className="flex space-x-3 pt-2">
-          <button
-            type="submit"
-            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
-          >
-            Submit
-          </button>
-          <button
-            type="reset"
-            className="bg-gray-300 text-black px-4 py-2 rounded-md hover:bg-gray-400"
-          >
-            Reset
-          </button>
+          {loading ? (
+            <div className="flex items-center justify-center h-12 w-full">
+              <div className="animate-spin rounded-full h-10 w-10 border-b-6 border-teal-600"></div>
+            </div>
+          ) : (
+            <button
+              type="submit"
+              className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 w-full"
+            >
+              Submit
+            </button>
+          )}
         </div>
       </form>
     </div>
