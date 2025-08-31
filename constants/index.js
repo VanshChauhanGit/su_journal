@@ -1,4 +1,5 @@
-import { Home, Users, FileText, BookOpen, Gavel, Mail } from "lucide-react";
+import { Home, Users, FileText, Mail, Instagram } from "lucide-react";
+import { Facebook, Twitter, Youtube, Link as LinkIcon } from "lucide-react";
 
 export const navItems = [
   { label: "Home", icon: Home, href: "/" },
@@ -11,13 +12,7 @@ export const navItems = [
   { label: "Menace of Plagiarism", href: "/menace-of-plagiarism" },
   {
     label: "Guidelines",
-    href: "guidelines",
-    // dropdown: [
-    //   { label: "Author Guidelines", href: "/author-guidelines" },
-    //   { label: "Research Areas", href: "/research-areas" },
-    //   { label: "Correction Policy", href: "/correction-policy" },
-    //   { label: "Plagiarism Policy", href: "/plagiarism-policy" },
-    // ],
+    href: "/guidelines",
   },
   { label: "Open Access", icon: Mail, href: "/open-access" },
 ];
@@ -241,3 +236,78 @@ export const referees = [
       "Chairman, Department of Economics, BPS Women University, Khanpur, Sonepat (Haryana)",
   },
 ];
+
+export const footerContent = {
+  quickLinks: {
+    title: "Quick Links",
+    social: [
+      {
+        href: "https://www.facebook.com/ShobhitUniversityIndia/",
+        icon: <Facebook size={18} />,
+      },
+      {
+        href: "https://x.com/shobhituniv?lang=en",
+        icon: <Twitter size={18} />,
+      },
+      {
+        href: "https://www.instagram.com/Shobhituniv",
+        icon: <Instagram size={18} />,
+      },
+      {
+        href: "https://www.youtube.com/user/shobhituniversityin",
+        icon: <Youtube size={18} />,
+      },
+      {
+        href: "https://www.shobhituniversity.ac.in/",
+        icon: <LinkIcon size={18} />,
+      },
+    ],
+    links: [
+      { label: "Home", href: "/" },
+      { label: "FAQ's", href: "#" },
+      { label: "Site-map", href: "#" },
+      { label: "Terms & Conditions", href: "#" },
+    ],
+  },
+  journal: {
+    title: "Journal Contents",
+    links: [
+      { label: "Current Issue", href: "#" },
+      { label: "Archive Issues", href: "#" },
+      { label: "Special Issues", href: "#" },
+      { label: "Best Paper Awards", href: "#" },
+      {
+        label: "Regular Publication e-Certificate",
+        href: "#",
+      },
+      {
+        label: "Special Publication e-Certificate",
+        href: "#",
+      },
+    ],
+  },
+  downloads: {
+    title: "Downloads",
+    links: [
+      { label: "IJNJB Template", href: "#" },
+      { label: "Copyright Form", href: "#" },
+      { label: "Originality Certificate", href: "#" },
+    ],
+    extra: {
+      title: "Subscription Fee",
+      link: { label: "Subscription Fee", href: "#" },
+    },
+  },
+  authors: {
+    title: "For Authors & Reviewers",
+    links: [
+      { label: "Author Guidelines", href: "/guidelines" },
+      { label: "Reviewer Guidelines", href: "/guidelines" },
+      { label: "Peer Review Process", href: "#" },
+      { label: "Ethics & Malpractice", href: "#" },
+      { label: "Research Areas", href: "#" },
+      { label: "Correction Policy", href: "#" },
+      { label: "Plagiarism Policy", href: "#" },
+    ],
+  },
+};

@@ -4,10 +4,8 @@ import React from "react";
 function page() {
   return (
     <Wrapper>
-      <h1 className="text-2xl font-bold text-teal-700">
-        Menace of Plagiarism
-      </h1>
-      
+      <h1 className="text-2xl font-bold text-teal-700">Menace of Plagiarism</h1>
+
       <hr className="border-t border-teal-700 my-2" />
 
       <p className="mb-4">
@@ -61,10 +59,6 @@ function page() {
         Writing a research paper is a demanding as well as rewarding task. A
         person looking for an unearned reward is surely inviting trouble for
         himself and a bad name for the entire academic community.
-      </p>
-
-      <p className="mt-8 font-semibold text-right text-yellow-700 italic">
-        Editor
       </p>
 
       <h2 className="text-2xl font-bold mb-6 text-teal-800">

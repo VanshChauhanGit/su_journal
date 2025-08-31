@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Facebook, Twitter, Youtube, Link as LinkIcon, FacebookIcon } from "lucide-react";
+import { footerContent } from "../constants";
 
 export default function Footer() {
   return (
@@ -8,125 +8,78 @@ export default function Footer() {
       <div className="container mx-auto max-w-7xl px-4 grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-white/20 pb-8">
         {/* Quick Links */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
+          <h3 className="font-semibold text-lg mb-3">
+            {footerContent.quickLinks.title}
+          </h3>
           <div className="flex space-x-3 mb-4">
-            <a
-              href="#"
-              className="p-2 bg-white/20 rounded-full hover:bg-white/40"
-            >
-              <Facebook size={18} />
-            </a>
-            <a
-              href="#"
-              className="p-2 bg-white/20 rounded-full hover:bg-white/40"
-            >
-              <Twitter size={18} />
-            </a>
-            <a
-              href="#"
-              className="p-2 bg-white/20 rounded-full hover:bg-white/40"
-            >
-              <Youtube size={18} />
-            </a>
-            <a
-              href="#"
-              className="p-2 bg-white/20 rounded-full hover:bg-white/40"
-            >
-              <LinkIcon size={18} />
-            </a>
+            {footerContent.quickLinks.social.map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                target="_blank"
+                className="p-2 bg-white/20 rounded-full hover:bg-white/40"
+              >
+                {item.icon}
+              </a>
+            ))}
           </div>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/faqs">FAQ&apos;s</Link>
-            </li>
-            <li>
-              <Link href="/sitemap">Site-map</Link>
-            </li>
-            <li>
-              <Link href="/terms">Terms & Conditions</Link>
-            </li>
+            {footerContent.quickLinks.links.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Journal Contents */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">Journal Contents</h3>
+          <h3 className="font-semibold text-lg mb-3">
+            {footerContent.journal.title}
+          </h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/current-issue">Current Issue</Link>
-            </li>
-            <li>
-              <Link href="/archive">Archive Issues</Link>
-            </li>
-            <li>
-              <Link href="/special-issues">Special Issues</Link>
-            </li>
-            <li>
-              <Link href="/awards">Best Paper Awards</Link>
-            </li>
-            <li>
-              <Link href="/certificate/regular">
-                Regular Publication e-Certificate
-              </Link>
-            </li>
-            <li>
-              <Link href="/certificate/special">
-                Special Publication e-Certificate
-              </Link>
-            </li>
+            {footerContent.journal.links.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Downloads */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">Downloads</h3>
+          <h3 className="font-semibold text-lg mb-3">
+            {footerContent.downloads.title}
+          </h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/downloads/template">IJNJB Template</Link>
-            </li>
-            <li>
-              <Link href="/downloads/copyright">Copyright Form</Link>
-            </li>
-            <li>
-              <Link href="/downloads/originality">Originality Certificate</Link>
-            </li>
+            {footerContent.downloads.links.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
-          <h4 className="font-semibold text-lg mt-4 mb-2">Subscription Fee</h4>
-          <Link href="/subscription" className="text-sm block">
-            Subscription Fee
+          <h4 className="font-semibold text-lg mt-4 mb-2">
+            {footerContent.downloads.extra.title}
+          </h4>
+          <Link
+            href={footerContent.downloads.extra.link.href}
+            className="text-sm block"
+          >
+            {footerContent.downloads.extra.link.label}
           </Link>
         </div>
 
         {/* For Authors & Reviewers */}
         <div>
           <h3 className="font-semibold text-lg mb-3">
-            For Authors & Reviewers
+            {footerContent.authors.title}
           </h3>
           <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/guidelines/authors">Author Guidelines</Link>
-            </li>
-            <li>
-              <Link href="/guidelines/reviewers">Reviewer Guidelines</Link>
-            </li>
-            <li>
-              <Link href="/peer-review">Peer Review Process</Link>
-            </li>
-            <li>
-              <Link href="/ethics">Ethics & Malpractice</Link>
-            </li>
-            <li>
-              <Link href="/research-areas">Research Areas</Link>
-            </li>
-            <li>
-              <Link href="/policies/correction">Correction Policy</Link>
-            </li>
-            <li>
-              <Link href="/policies/plagiarism">Plagiarism Policy</Link>
-            </li>
+            {footerContent.authors.links.map((link, i) => (
+              <li key={i}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

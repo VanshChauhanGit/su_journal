@@ -23,16 +23,14 @@ export default function JournalCard() {
       {/* Right Side Content */}
       <div className="md:w-2/3 p-6">
         <h2 className="text-xl font-bold text-gray-800">Editor-in-Chief</h2>
-        <p className="text-gray-700 font-semibold mb-2">
-          Dr. Tarun Kumar Sharma (SU, Shobhit University, Meerut)
-        </p>
+        <p className="text-gray-700 font-semibold mb-2">D.P.S. VERMA</p>
 
         <ul className="text-sm text-gray-600 space-y-1 mb-4">
           <li>
             <span className="font-bold">ISSN:</span> 0973-449X
           </li>
           <li>
-            <span className="font-bold">Frequency:</span> Published 12 Times a
+            <span className="font-bold">Frequency:</span> Published 2 Times a
             Year
           </li>
           <li>
@@ -52,7 +50,7 @@ export default function JournalCard() {
             First, immediately after acceptance
           </li>
           <li>
-            <span className="font-bold">Publisher:</span> ISROSET, Indore, India
+            <span className="font-bold">Publisher:</span> Shobhit University
           </li>
         </ul>
 

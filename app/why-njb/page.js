@@ -163,8 +163,6 @@ function page() {
           person looking for an unearned reward is surely inviting trouble for
           himself and a bad name for the entire academic community.
         </p>
-
-        <h3 className="text-right pr-5 font-semibold">- Editor </h3>
       </div>
     </Wrapper>
   );
