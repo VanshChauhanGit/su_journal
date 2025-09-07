@@ -31,6 +31,16 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+          <div className="w-full h-36">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d892699.4636080405!2d76.5582275390625!3d29.072974690644934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c6fb077e3ead9%3A0x47077e27598160!2sShobhit%20Deemed%20University!5e0!3m2!1sen!2sin!4v1757259686005!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
 
         {/* Journal Contents */}

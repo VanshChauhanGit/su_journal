@@ -1,4 +1,12 @@
-import { Home, Users, FileText, Mail, Instagram } from "lucide-react";
+import {
+  Home,
+  Users,
+  FileText,
+  Mail,
+  Instagram,
+  Linkedin,
+  LinkedinIcon,
+} from "lucide-react";
 import { Facebook, Twitter, Youtube, Link as LinkIcon } from "lucide-react";
 
 export const navItems = [
@@ -242,31 +250,35 @@ export const footerContent = {
     title: "Quick Links",
     social: [
       {
+        href: "https://www.linkedin.com/school/shobhit-university/",
+        icon: <LinkedinIcon size={20} />,
+      },
+      {
         href: "https://www.facebook.com/ShobhitUniversityIndia/",
-        icon: <Facebook size={18} />,
+        icon: <Facebook size={20} />,
       },
       {
         href: "https://x.com/shobhituniv?lang=en",
-        icon: <Twitter size={18} />,
+        icon: <Twitter size={20} />,
       },
       {
         href: "https://www.instagram.com/Shobhituniv",
-        icon: <Instagram size={18} />,
+        icon: <Instagram size={20} />,
       },
       {
         href: "https://www.youtube.com/user/shobhituniversityin",
-        icon: <Youtube size={18} />,
+        icon: <Youtube size={20} />,
       },
       {
         href: "https://www.shobhituniversity.ac.in/",
-        icon: <LinkIcon size={18} />,
+        icon: <LinkIcon size={20} />,
       },
     ],
     links: [
-      { label: "Home", href: "/" },
-      { label: "FAQ's", href: "#" },
-      { label: "Site-map", href: "#" },
+      // { label: "Home", href: "/" },
+      // { label: "FAQ's", href: "#" },
       { label: "Terms & Conditions", href: "#" },
+      { label: "Site-map", href: "#" },
     ],
   },
   journal: {
@@ -289,7 +301,7 @@ export const footerContent = {
   downloads: {
     title: "Downloads",
     links: [
-      { label: "IJNJB Template", href: "#" },
+      { label: "NJB Template", href: "#" },
       { label: "Copyright Form", href: "#" },
       { label: "Originality Certificate", href: "#" },
     ],
