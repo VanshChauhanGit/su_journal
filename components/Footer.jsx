@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { footerContent } from "../constants";
+import { Globe } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -86,8 +87,33 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="bg-gradient-to-r from-blue-600 to-teal-600 text-white text-center py-4 text-sm">
+        <p className="mb-2 text-lg flex items-center justify-center gap-1">
+          Developed by{" "}
+          <Link
+            href={"https://linkedin.com/in/vanshchauhan0"}
+            target="_blank"
+            className="font-semibold hover:underline"
+          >
+            Vansh Chauhan
+          </Link>
+          <Link
+            href={"https://vansh-chauhan.netlify.app"}
+            target="_blank"
+            className="hover:font-semibold"
+          >
+            <Globe size={16} />
+          </Link>
+          &
+          <Link
+            href={"https://www.linkedin.com/in/vipul-sharma-44665a235/"}
+            target="_blank"
+            className="font-semibold hover:underline"
+          >
+            Vipul Sharma
+          </Link>
+        </p>
         <p>
-          Copyright © {new Date().getFullYear()} - Present All Rights Reserved
+          Copyright © {new Date().getFullYear()} Shobhit University
           <br />
         </p>
       </div>
