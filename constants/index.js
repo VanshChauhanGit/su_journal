@@ -305,10 +305,10 @@ export const footerContent = {
       { label: "Copyright Form", href: "#" },
       { label: "Originality Certificate", href: "#" },
     ],
-    extra: {
-      title: "Subscription Fee",
-      link: { label: "Subscription Fee", href: "#" },
-    },
+    // extra: {
+    //   title: "Subscription Fee",
+    //   link: { label: "Subscription Fee", href: "#" },
+    // },
   },
   authors: {
     title: "For Authors & Reviewers",

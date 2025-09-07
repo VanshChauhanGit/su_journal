@@ -69,15 +69,19 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <h4 className="font-semibold text-lg mt-4 mb-2">
-            {footerContent.downloads.extra.title}
-          </h4>
-          <Link
-            href={footerContent.downloads.extra.link.href}
-            className="text-sm block"
-          >
-            {footerContent.downloads.extra.link.label}
-          </Link>
+          {footerContent.downloads.extra && (
+            <>
+              <h4 className="font-semibold text-lg mt-4 mb-2">
+                {footerContent.downloads.extra.title}
+              </h4>
+              <Link
+                href={footerContent.downloads.extra.link.href}
+                className="text-sm block"
+              >
+                {footerContent.downloads.extra.link.label}
+              </Link>
+            </>
+          )}
         </div>
 
         {/* For Authors & Reviewers */}
