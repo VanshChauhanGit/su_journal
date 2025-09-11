@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Sidebar() {
@@ -9,17 +10,40 @@ function Sidebar() {
           Journal Update
         </div>
         <div className="p-4 text-sm text-gray-700">
-          through the{" "}
+          Authors can submit the manuscript through the{" "}
           <span className="text-red-600 font-semibold">
             online submission procedure
           </span>
           , available at our website. <br />
-          <a
-            href="/login"
-            className="text-blue-600 underline"
-          >
+          <a href="/login" className="text-blue-600 underline">
             https://su-journal.vercel.app
           </a>
+        </div>
+      </div>
+
+      {/* Regular Issues Contents */}
+      <div>
+        <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-t-lg text-white px-4 py-2 font-bold text-lg mt-2">
+          Regular Issues Contents
+        </div>
+        <div className="p-4 text-sm">
+          <ul className="list-disc list-inside space-y-1 text-blue-700 font-medium">
+            <li>
+              <Link href="/current-issue" className="hover:underline">
+                Current Issue
+              </Link>
+            </li>
+            <li>
+              <Link href="archive-volume" className="hover:underline">
+                Archive Issues
+              </Link>
+            </li>
+            {/* <li>
+              <Link href="#" className="hover:underline">
+                Best Paper Awards
+              </Link>
+            </li> */}
+          </ul>
         </div>
       </div>
 
@@ -45,32 +69,6 @@ function Sidebar() {
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-
-      {/* Regular Issues Contents */}
-      <div>
-        <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-t-lg text-white px-4 py-2 font-bold text-lg mt-2">
-          Regular Issues Contents
-        </div>
-        <div className="p-4 text-sm">
-          <ul className="list-disc list-inside space-y-1 text-blue-700 font-medium">
-            <li>
-              <a href="#" className="hover:underline">
-                Current Issue
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Archive Issues
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">
-                Best Paper Awards
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </aside>
