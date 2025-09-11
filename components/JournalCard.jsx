@@ -23,7 +23,7 @@ export default function JournalCard() {
       {/* Right Side Content */}
       <div className="md:w-2/3 p-6">
         <h2 className="text-xl font-bold text-gray-800">Editor-in-Chief</h2>
-        <p className="text-gray-700 font-semibold mb-2">D.P.S. VERMA</p>
+        <p className="text-gray-700 font-semibold mb-2">Prof. D.P.S. Verma</p>
 
         <ul className="text-sm text-gray-600 space-y-1 mb-4">
           <li>
