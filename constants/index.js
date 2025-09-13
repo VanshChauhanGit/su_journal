@@ -284,10 +284,8 @@ export const footerContent = {
   journal: {
     title: "Journal Contents",
     links: [
-      { label: "Current Issue", href: "#" },
-      { label: "Archive Issues", href: "#" },
-      { label: "Special Issues", href: "#" },
-      { label: "Best Paper Awards", href: "#" },
+      { label: "Current Issue", href: "/current-issue" },
+      { label: "Archive Issues", href: "/archive-volume" },
       {
         label: "Regular Publication e-Certificate",
         href: "#",
