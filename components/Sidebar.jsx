@@ -34,7 +34,7 @@ function Sidebar() {
               </Link>
             </li>
             <li>
-              <Link href="archive-volume" className="hover:underline">
+              <Link href="/archive-volume" className="hover:underline">
                 Archive Issues
               </Link>
             </li>
