@@ -14,14 +14,14 @@ export default function Footer() {
           </h3>
           <div className="flex space-x-3 mb-4">
             {footerContent.quickLinks.social.map((item, i) => (
-              <a
+              <Link
                 key={i}
                 href={item.href}
                 target="_blank"
                 className="p-2 bg-white/20 rounded-full hover:bg-white/40"
               >
                 {item.icon}
-              </a>
+              </Link>
             ))}
           </div>
           <ul className="space-y-2 text-sm">
