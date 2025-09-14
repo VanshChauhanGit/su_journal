@@ -2,7 +2,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 function PaperCard({ paper, volume, issueData }) {
-  console.log(paper);
   const [activeTab, setActiveTab] = useState(null);
 
   const toggleTab = (tab) => {
