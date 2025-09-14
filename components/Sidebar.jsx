@@ -1,3 +1,4 @@
+import { ArrowBigRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -5,11 +6,12 @@ function Sidebar() {
   return (
     <aside className="w-full bg-white shadow-md overflow-hidden gap-3 flex flex-col rounded-t-lg">
       {/* Journal Update */}
-      <div className="">
+      <div>
         <div className="bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-t-lg px-4 py-2 font-bold text-lg">
           Journal Update
         </div>
         <div className="p-4 text-sm text-gray-700">
+          <ArrowBigRight className="inline-block mr-1" size={18} />
           Authors can submit the manuscript through the{" "}
           <span className="text-red-600 font-semibold">
             online submission procedure
@@ -19,6 +21,7 @@ function Sidebar() {
             https://su-journal.vercel.app
           </a> */}
           <p className="mt-2 text-md font-semibold">
+            <ArrowBigRight className="inline-block mr-1" size={18} />
             Indexed in Cabell’s, Ulrich, EBSCO’s
           </p>
         </div>
