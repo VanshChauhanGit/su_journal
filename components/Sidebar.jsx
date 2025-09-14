@@ -15,9 +15,12 @@ function Sidebar() {
             online submission procedure
           </span>
           , available at our website. <br />
-          <a href="/login" className="text-blue-600 underline">
+          {/* <a href="/login" className="text-blue-600 underline">
             https://su-journal.vercel.app
-          </a>
+          </a> */}
+          <p className="mt-2 text-md font-semibold">
+            Indexed in Cabell’s, Ulrich, EBSCO’s
+          </p>
         </div>
       </div>
 
@@ -38,11 +41,6 @@ function Sidebar() {
                 Archive Issues
               </Link>
             </li>
-            {/* <li>
-              <Link href="#" className="hover:underline">
-                Best Paper Awards
-              </Link>
-            </li> */}
           </ul>
         </div>
       </div>
