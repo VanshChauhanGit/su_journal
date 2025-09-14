@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Sidebar from "@/components/Sidebar";
@@ -8,8 +8,19 @@ import UserSidebar from "./UserSidebar";
 
 function ContentLayout({ children }) {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    // Avoid hydration mismatch by not rendering until mounted
+    return null;
+  }
 
   const isUserRoute = pathname.startsWith("/user");
+  const isPdfViewRoute = pathname.startsWith("/pdf-paper-view");
   return (
     <>
       <Header />
@@ -21,7 +32,7 @@ function ContentLayout({ children }) {
         )}
         <div className="flex-1">{children}</div>
 
-        {!isUserRoute && (
+        {!isUserRoute && !isPdfViewRoute && (
           <div className="w-80 shrink-0">
             <Sidebar />
           </div>

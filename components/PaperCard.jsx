@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 
 function PaperCard({ paper, volume, issueData }) {
@@ -21,7 +22,14 @@ function PaperCard({ paper, volume, issueData }) {
       </div>
 
       {/* Title */}
-      <h2 className="text-blue-700 font-semibold">{paper.paperTitle}</h2>
+      <Link
+        href={`/pdf-paper-view?url=${encodeURIComponent(paper.fileUrl)}`}
+        // target="_blank"
+      >
+        <h2 className="text-blue-700 font-semibold hover:underline">
+          {paper.paperTitle}
+        </h2>
+      </Link>
 
       {/* Authors */}
       <p className="text-sm text-gray-700 mt-1">
