@@ -4,7 +4,9 @@ import Wrapper from "@/components/Wrapper";
 function page() {
   return (
     <Wrapper>
-      <h2 className="text-teal-700 text-2xl font-bold">About Shobhit Meerut</h2>
+      <h2 className="text-teal-700 text-2xl font-bold">
+        About Shobhit University Meerut
+      </h2>
       <hr className="border-t border-teal-700 my-2" />
       <div className="flex flex-row gap-4">
         <div className="flex-1 text-justify">
