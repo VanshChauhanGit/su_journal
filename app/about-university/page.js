@@ -27,19 +27,25 @@ function page() {
           </div>
           <div>
             <h2 className="text-xl font-semibold">
-              School of Business Studies
+              NICE School of Business Studies
             </h2>
             <p>
-              School of Business Studies (SBS) is an integral part of Shobhit
-              Deemed University, Meerut. It has inherited the academic legacy of
-              the NICE Management College (established in 1995), and together
-              with autonomy in curriculum-designing and flexibility for foreign
-              collaboration, through academic exchange, credit-transfer
-              mechanism, and increased institution-industry interface. It offers
-              MBA programme with several specialisations, including marketing,
-              finance, human resource management, and production and operations
-              management. It also offers M.Phil. and Ph.D. programmes in
-              management.
+              NICE School of Business Studies at Shobhit University, Meerut, is
+              committed to excellence in business education, research, and
+              professional growth. With a strong focus on business
+              administration, management studies, entrepreneurship, and ethical
+              business practices, the school equips students with in-depth
+              knowledge of management, marketing, accounting, finance, and other
+              core disciplines. It fosters a culture of innovation and
+              entrepreneurship by encouraging students to develop new business
+              ideas and ventures, while its strong industry collaborations
+              provide opportunities for internships, networking, and real-world
+              projects. Alongside teaching and training, the school also
+              emphasizes research, contributing to the advancement of business
+              knowledge and practices. Through its comprehensive programs—MBA,
+              BBA, B.Com, and Ph.D.—NICE SBS prepares students to become
+              innovative, responsible, and future-ready leaders in the
+              global business world.
             </p>
           </div>
         </div>
